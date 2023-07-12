@@ -40,12 +40,12 @@ function ttf(){
  var hs = Math.floor(tmp / 60 / 60);
  var ms = Math.floor(tmp / 60) - (hs * 60);
  var ss = tmp % 60;
- //console.log(sz,sc,tmp,'-time:',hs,ms,ss);
+ console.log(sz,sc,tmp,'-time:',hs,ms,ss);
  let est='';
  if (tmp<=100){ est="mere seconds"; }
  if (tmp>100 && tmp<=300){ est="few minutes"; }
- if (tmp>300 && tmp<=3600){ est="half hour"; }
- if (tmp>3600 && tmp<=7200){ est="a few hours"; }
+ if (tmp>300 && tmp<=2600){ est="half hour"; }
+ if (tmp>2600 && tmp<=7200){ est="a few hours"; }
  if (tmp>7200 && tmp<=80000){ est="several hours"; }
  if (tmp>80000){ est="maybe days?"; }
  document.getElementById("ttf").innerHTML=est;
