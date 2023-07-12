@@ -53,6 +53,7 @@ function ttf(){
 
 function newg(){
  //reset
+ document.getElementById("circhelp").style.display='none';
  document.getElementById("circsetup").style.display='none';
  var elem = document.getElementById("spr").style.display='block';
  done=0;
