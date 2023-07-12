@@ -53,8 +53,9 @@ function ttf(){
 }
 
 function newg(){
- var elem = document.getElementById("spr");
- elem.style.display='block';
+ //reset
+ document.getElementById("circsetup").style.display='none';
+ var elem = document.getElementById("spr").style.display='block';
  done=0;
  //console.log('new');
  //get puzzle
