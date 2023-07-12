@@ -11,6 +11,7 @@
 <p><br>Need help? Take a look at these:<br>
  <a target="_blank" href='https://youtu.be/CwkhMN1WqD0'><b>(-Tutorial Video 2-)</b></a><br>
  <a target="_blank" href='https://youtu.be/A7OeoaReGKU '><b>(-Tutorial Video 1-)</b></a><br>
+ <br>Works best on Chrome and Firefox.
 <p><br><p></center></div>
 <div id="circsetup" style="display:none"><center>
 <h3>Choose a level preset:</h3>
