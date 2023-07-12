@@ -8,7 +8,9 @@
 <br>Circles is a game where you attempt to match all the coloured half circles by moving the big circles around.<br> The computer will generate and shuffle a new puzzle, all you have to do is put it together like a jigsaw puzzle.
 <p>Drag pieces with a plus or line.
 <br>Click pieces with a circle or curve.<p>
-<p><br>Need help? Take a look at the <a target="_blank" href='https://youtu.be/CwkhMN1WqD0'><b>(-Tutorial Video-)</b></a><br>
+<p><br>Need help? Take a look at these:<br>
+ <a target="_blank" href='https://youtu.be/CwkhMN1WqD0'><b>(-Tutorial Video 2-)</b></a><br>
+ <a target="_blank" href='https://youtu.be/A7OeoaReGKU '><b>(-Tutorial Video 1-)</b></a><br>
 <p><br><p></center></div>
 <div id="circsetup" style="display:none"><center>
 <h3>Choose a level preset:</h3>
