@@ -40,8 +40,7 @@ function ttf(){
  var hs = Math.floor(tmp / 60 / 60);
  var ms = Math.floor(tmp / 60) - (hs * 60);
  var ss = tmp % 60;
- 
- console.log(sz,sc,tmp,'-time:',hs,ms,ss);
+ //console.log(sz,sc,tmp,'-time:',hs,ms,ss);
  let est='';
  if (tmp<=100){ est="mere seconds"; }
  if (tmp>100 && tmp<=300){ est="few minutes"; }
