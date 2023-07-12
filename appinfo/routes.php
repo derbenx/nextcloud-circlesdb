@@ -8,5 +8,6 @@
 return [
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
+       ['name' => 'page#save', 'url' => '/gen', 'verb' => 'POST']
     ]
 ];

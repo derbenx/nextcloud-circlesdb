@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>solitaire</id>
-    <name>Solitaire</name>
-    <summary>Solitaire</summary>
+    <id>circlesdb</id>
+    <name>Circles</name>
+    <summary>Circles game</summary>
     <description><![CDATA[
-# Solitaire
-A Nextcloud app that lets you play Solitaire.
+# circlesdb
+A Nextcloud app that lets you play circlesdb.
     ]]></description>
-    <version>1.0.0</version>
+    <version>1.7.0</version>
     <licence>public</licence>
     <author mail="colin@derben.ca" homepage="https://derben.ca">DerBen</author>
-    <namespace>Solitaire</namespace>
+    <namespace>circlesdb</namespace>
     <category>games</category>
-    <website>https://github.com/derbenx/nextcloud-solitaire</website>
-    <bugs>https://github.com/derbenx/nextcloud-solitaire/issues</bugs>
-    <screenshot>https://raw.githubusercontent.com/derbenx/nextcloud-solitaire/master/Solitaire.png</screenshot>
+    <website>https://github.com/derbenx/nextcloud-circlesdb</website>
+    <bugs>https://github.com/derbenx/nextcloud-circlesdb/issues</bugs>
+    <screenshot>https://raw.githubusercontent.com/derbenx/nextcloud-circlesdb/master/circlesdb.png</screenshot>
     <dependencies>
         <nextcloud min-version="25" max-version="26"/>
     </dependencies>
 	    <navigations>
         <navigation>
-            <name>Solitaire</name>
-            <route>solitaire.page.index</route>
+            <name>Circles</name>
+            <route>circlesdb.page.index</route>
         </navigation>
     </navigations>
 </info>

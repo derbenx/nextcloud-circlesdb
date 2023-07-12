@@ -1,8 +1,8 @@
+<div id="app-content">
 <?php
-script('solitaire', 'cards');
-script('solitaire', 'main');
-style('solitaire', 'sol');
+style('circlesdb', 'circ');
+script('circlesdb', 'circ');
+print_unescaped($this->inc('page'));
+//print_unescaped($this->inc('gen'));
 ?>
-
-<?php print_unescaped($this->inc('content/index')); ?>
-<?php //print_unescaped($this->inc('content/game')); ?>
+</div>
