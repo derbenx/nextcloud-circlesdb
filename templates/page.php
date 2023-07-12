@@ -14,13 +14,14 @@
 <p><br><p></center></div>
 <div id="circsetup" style="display:none"><center>
 <h3>Choose a level preset:</h3>
-<button id='v1'>Simple</button> 
-<button id='v2'>Easy</button> 
-<button id='v3'>Medium</button> 
-<button id='v4'>Hard</button> 
-<button id='v5'>Difficult</button> 
-<button id='v6'>Expert</button> 
-<button id='v7'>Insane</button> 
+<button id='v1'>Simple</button>
+<button id='v2'>Easy</button>
+<button id='v3'>Medium</button>
+<button id='v4'>Hard</button>
+<button id='v5'>Difficult</button>
+<button id='v6'>Bored</button>
+<button id='v7'>Expert</button>
+<button id='v8'>Insane</button>
 <h3>Or choose your options:</h3>
 <!--
  1 drag: 0=blank 1=fixed 2=move:+ 3=UD:- 4=LR:|
@@ -29,13 +30,14 @@
 -->
 <table id='circtab'>
 <tr><td><b>Choice</b></td><td><b>Input</b></td><td><b>Range</b></td><td><b>Meaning</b></td></tr>
-<tr><td>Size:</td><td><input id='wxh' type='input' name='wxh' maxlength='2' size='2' value='4'></td><td>3-10</td><td>Width</td></tr>
+<tr><td>Size:</td><td><input id='wxh' type='input' name='wxh' maxlength='2' size='2' value='4'></td><td>3-15</td><td>Width</td></tr>
 <tr><td>Movement:</td><td><input id='mov' type='input' name='mov' maxlength='2' size='1' value='2'></td><td>2-4</td><td>Movement complexity</td></tr>
 <tr><td>Rotation:</td><td><input id='rot' type='input' name='rot' maxlength='1' size='1' value='1'></td><td>0-3</td><td>Rotation complexity.</td></tr>
 <tr><td>Colours:</td><td><input id='clr' type='input' name='clr' maxlength='1' size='1' value='5'></td><td>2-9</td><td>Colours used.</td></tr>
 <tr><td>Percent:</td><td><input id='pct' type='input' name='pct' maxlength='2' size='2' value='55'></td><td>20-80%</td><td>Filled tile space percentage.</td></tr>
 <tr><td>Fixed:</td><td><input id='pnt' type='input' name='pnt' maxlength='1' size='1' value='1'></td><td>0-9</td><td>Will randomly place up to set number of fixed tiles.</td></tr>
 <tr><td>Ratio:</td><td colspan="2"><select name="rat" id='rat'><option value="0">Square</option><option value="1">Screen</option></select></td><td>Square will be same number of squares on every device<br>Screen will grow with available screen size.</td></tr>
+<tr><td>Estimate:</td><td colspan="2" id='ttf'>seconds</td><td>Approximate time to finish. Results may vary.</td></tr>
 </table><br><!--<input id='start' type='button' value='Start New Game'> OR <input id='load' type='button' value='Load Game' >-->
 After changing these options, press <button id='circstart2'>-New Game-</button>!<br>
 

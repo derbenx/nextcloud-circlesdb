@@ -9,8 +9,10 @@ var fx,fy;// mouse grabbed coords
 var px,py,pz;// phone/touch grabbed
 var drag='n'; //draggable
 var col,xx,yy,grid,ww,hh,sz,xxx,yyy,outt; //from json
-let lvl=['','32091550','42152550','53141550','64332551','74341551','84351601','94360701'];
+let lvl=['',' 32091550',' 42152550',' 53141550',' 64332551',' 74341551',' 84351601',' 94360701','154340801'];
 
+document.getElementById("wxh").onchange = function(){ ttf(); }
+document.getElementById("rat").onchange = function(){ ttf(); }
 document.getElementById("circstart").onclick = function(){ newg(); }
 document.getElementById("circstart2").onclick = function(){ newg(); }
 
@@ -24,12 +26,36 @@ document.getElementById("circtoghelp").onclick = function(){
  if (cirtog.style.display !== "none") { cirtog.style.display = "none"; }
  else {  cirtog.style.display = "block"; }
 }
-for (var tmp=1;tmp<8;tmp++){
+for (var tmp=1;tmp<9;tmp++){
 	console.log(tmp);
  document.getElementById("v"+tmp).onclick = function(e){ butt(e.target.id.replace("v", "")); }
 }
 newg();
+
+function ttf(){
+ sz=document.getElementById("wxh").value;
+ pc=document.getElementById("pct").value;
+ sc=document.getElementById("rat").selectedIndex;
+ tmp=((pc/10)+sz**4)*(sc+1);
+ var hs = Math.floor(tmp / 60 / 60);
+ var ms = Math.floor(tmp / 60) - (hs * 60);
+ var ss = tmp % 60;
+ 
+ console.log(sz,sc,tmp,'-time:',hs,ms,ss);
+ let est='';
+ if (tmp<=100){ est="mere seconds"; }
+ if (tmp>100 && tmp<=300){ est="few minutes"; }
+ if (tmp>300 && tmp<=3600){ est="half hour"; }
+ if (tmp>3600 && tmp<=7200){ est="a few hours"; }
+ if (tmp>7200 && tmp<=80000){ est="several hours"; }
+ if (tmp>80000){ est="maybe days?"; }
+ document.getElementById("ttf").innerHTML=est;
+}
+
 function newg(){
+ var elem = document.getElementById("spr");
+ elem.style.display='block';
+ done=0;
  //console.log('new');
  //get puzzle
  var xhttp = new XMLHttpRequest();
@@ -89,8 +115,6 @@ function dbstart(json){
  draw();
 }
 
-
-
 function butt(x){
  s=document.getElementById('wxh');
  m=document.getElementById('mov');
@@ -99,16 +123,17 @@ function butt(x){
  p=document.getElementById('pct');
  f=document.getElementById('pnt');
  t=document.getElementById('rat');
- s.value=lvl[x].substr(0,1);
- m.value=lvl[x].substr(1,1);
- r.value=lvl[x].substr(2,1);
- c.value=lvl[x].substr(3,1);
- f.value=lvl[x].substr(4,1);
- p.value=lvl[x].substr(5,2);
- t.selectedIndex=lvl[x].substr(7,1);
- if (document.getElementById('file')){
-  document.getElementById('file').remove();
- }
+ s.value=lvl[x].substr(0,2);
+ m.value=lvl[x].substr(2,1);
+ r.value=lvl[x].substr(3,1);
+ c.value=lvl[x].substr(4,1);
+ f.value=lvl[x].substr(5,1);
+ p.value=lvl[x].substr(6,2);
+ t.selectedIndex=lvl[x].substr(8,1);
+ //if (document.getElementById('file')){
+  //document.getElementById('file').remove();
+ //}
+ ttf();
 }
 function clkd(event){
  //readFile();
@@ -490,7 +515,8 @@ function solve(){
 }
 function fini(){
  var elem = document.getElementById("spr");
- elem.remove();
+ //elem.remove();
+ elem.style.display='none';
  var msg='Congrats you won!\n\nTry a new puzzle, change some settings!\n\nYou can now save this image to share with others!\n\n';
  //sav(msg);
  alert(msg);
