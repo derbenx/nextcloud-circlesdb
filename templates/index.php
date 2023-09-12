@@ -1,8 +1,8 @@
 <div id="app-content">
 <?php
-style('circlesdb', 'circ');
-script('circlesdb', 'circ');
-print_unescaped($this->inc('page'));
+style('circlesdb', 'css');
+script('circlesdb', 'js');
+print_unescaped($this->inc('load'));
 //print_unescaped($this->inc('gen'));
 ?>
 </div>
