@@ -1,22 +1,25 @@
 <?php
+$nxc=1; // toggle for nextcloud servers
 //fixed points config
 $maxx=[0,1,2,1,2,1,1,1,0];
-
+//$scale=1.1;
 //grid bytes:
 // 1 drag: 0=blank 1=fixed 2=move:+ 3=UD:- 4=LR:|
 // 2 click: 0=nothing 1=rotate:O 2=flipH:U 3=flipV:C
 // 3+: tag colors 0=null ryvb
 $file=false;
-$wxh=isset($_POST["wxh"]) ? substr($_POST["wxh"],0,2) : 4; //size
+$wdh=isset($_POST["wdh"]) ? substr($_POST["wdh"],0,2) : 4; //wsize
+$hgt=isset($_POST["hgt"]) ? substr($_POST["hgt"],0,2) : 4; //hsize
 $mov=isset($_POST["mov"]) ? substr($_POST["mov"],0,1) : 2; //movement
 $rot=isset($_POST["rot"]) ? substr($_POST["rot"],0,1) : 1; //rotate
 $clr=isset($_POST["clr"]) ? substr($_POST["clr"],0,1) : 5; //colour
 $pct=isset($_POST["pct"]) ? substr($_POST["pct"],0,2) : 55; //percent
 $pnt=isset($_POST["pnt"]) ? substr($_POST["pnt"],0,1) : -1; //fixed
 $rat=isset($_POST["rat"]) ? substr($_POST["rat"],0,1) : 0; //ratio
-$ww=isset($_POST["ww"]) ? $_POST["ww"] : 1280;
-$hh=isset($_POST["hh"]) ? $_POST["hh"] : 720;
-if ($wxh<3 || $wxh>15) { $wxh=4; }
+//$ww=isset($_POST["ww"]) ? $_POST["ww"] : 1280;
+//$hh=isset($_POST["hh"]) ? $_POST["hh"] : 720;
+if ($wdh<3 || $wdh>40) { $wdh=4; }
+if ($hgt<3 || $hgt>40) { $hgt=4; }
 if ($mov<2 || $mov>4) { $mov=2; }
 if ($rot<0 || $rot>3) { $rot=1; }
 if ($clr<2 || $clr>9) { $clr=3; }
@@ -24,45 +27,14 @@ if ($pct<20 || $pct>80) { $pct=55; }
 if ($pnt<0 || $pnt>9) { $pnt=-1; }
 
 //Sort out screen and board
-$wh=$ww/$hh; //ratio >1=hori <1=vert
+//$wh=$ww/$hh; //ratio >1=hori <1=vert
 $grid=[];
 $col='grybvcplei';
 $col=substr($col,0,$clr+1);
 $out="{";
-
-
- if ($rat==1){
-  if ($wh>1){
-   //Horizontal
-   $yy=$wxh;
-   $hhh=$hh/1.2;
-   $www=$ww/1.2;
-   $tmp=$hhh/$yy;
-   $xx=1;
-   while ($xx*$tmp<$www-$tmp){
-    $xx=$xx+1;
-   }
-   $www=$xx*$tmp;
-  }else{
-   //Vertical
-   $xx=$wxh;
-   $hhh=$hh/1.2;
-   $www=$ww/1.2;
-   $tmp=$www/$xx;
-   $yy=1;
-   while ($yy*$tmp<$hhh-$tmp){
-    $yy=$yy+1;
-   }
-   $hhh=$yy*$tmp;
-  }
- } else {
-  $xx=$wxh;
-  $yy=$wxh;
-  $www=$wh>1 ? $hh/1.4 : $ww/1.4;
-  $hhh=$wh>1 ? $hh/1.4 : $ww/1.4;
- }
-
-
+$xx=$wdh;
+$yy=$hgt;
+ 
 //create start pos
 $sx=mt_rand(0,$xx-1);
 $sy=mt_rand(0,$yy-1);
@@ -353,4 +325,7 @@ function fdwall($px,$py,$xx,$yy,$grid){
 }
 
 //$out= str_replace("'", '"', $out);
+if ($nxc==0){
+ echo $out;
+}
 ?>
