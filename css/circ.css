@@ -1,6 +1,0 @@
-#debug { position:fixed;top:0px;left:0px; }
-#wrp{ margin:auto; width:100%; overflow:hidden; overscroll-behavior: none; }
-#can, #spr { display: block; margin: auto; }
-#can { border: 1px solid green; }
-#spr { border: 1px solid green;  transform: translate(0, -100%); }
-#circtab td { border: 1px dashed green; padding: 5px; }
