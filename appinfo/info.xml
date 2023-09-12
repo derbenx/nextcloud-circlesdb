@@ -14,8 +14,8 @@ Drag pieces with a plus or line.
 Click pieces with a circle or curve.
 Need help? Take a look at the Tutorial Video: https://youtu.be/CwkhMN1WqD0
     ]]></description>
-    <version>1.7.0</version>
-    <licence>public</licence>
+    <version>1.8.0</version>
+    <licence>agpl</licence>
     <author mail="colin@derben.ca" homepage="https://derben.ca">DerBen</author>
     <namespace>circlesdb</namespace>
     <category>games</category>
