@@ -1,4 +1,5 @@
 //console.log('circJS');
+const col='grybvcplei';
 const nxc=1; // nextcloud or normal webserver?
 const scal=.95;
 const hdr=document.getElementById('hdr');
@@ -6,14 +7,14 @@ const wrp=document.getElementById('wrp');
 const can=document.getElementById('can');
 const spr=document.getElementById('spr');
 var dbtm,dbug,fo,rstim;
-var fc= new Date();
+var fc= new Date(); //for cookie?
 var done=0;
 var mx,my;// current pointer location
 var gx,gy;// grabbed square
 var fx,fy;// mouse grabbed coords
 var px,py,pz;// phone/touch grabbed
 var drag='n'; //draggable
-var col,xx,yy,grid,ww,hh,sz,xxx,yyy,outt; //from json
+var xx,yy,grid,ww,hh,sz,xxx,yyy,outt; //from json
 //const colr='grybvcplei';
 let lvl=['',' 32091550',' 42152550',' 54141551',' 64332551',' 74341551',' 84351601',' 94360701','154340801'];
 
@@ -77,11 +78,12 @@ function newg(){
  //check cookie
  tmp=gCook("prog"); //progress
  if (tmp) {
-  console.log('game found');
+  //console.log('game found');
   //console.log('orig: ',gCook('orig'));
 
-  col=gCook('c');
-  console.log('col',col);
+  //col=gCook('c');
+  //col='grybvcplei';
+  //console.log('col',col);
 /*
   ww=350;
   hh=350;
@@ -165,7 +167,7 @@ function newg(){
 
 function dbstart(json){
  //parse data into variables
- console.log('#'+json+'#');
+ //console.log('#'+json+'#');
  var data = JSON.parse(json);
  if (nxc==1){
   data = JSON.parse(data); //parse twice, yeah..
@@ -175,7 +177,7 @@ function dbstart(json){
  yy=data.yy*1;
  //ww=data.ww*1;
  //hh=data.hh*1;
- col=data.col;
+ //col=data.col;
  //xxx=ww/xx;yyy=hh/yy;
  //sz=xxx<yyy ? xxx*0.48 : yyy*0.48;
  outt=xx;
@@ -341,10 +343,18 @@ function scale(){
  //console.log(sc1,sc2);
  if (sc2!=1 && ( (sc1>1 && sc2<1) || (sc1<1 && sc2>=1) ) ) {
   //console.log('flip');
-   var tgrd = new Array(yy).fill(null).map(()=>new Array(xx).fill(null));
- for (var y=0;y<yy;y++){
-  for (var x=0;x<xx;x++){
-   tgrd[y][x]=grid[x][y].slice(0,2)+grid[x][y].slice(3,6)+grid[x][y].slice(2,3);
+  var tgrd = new Array(yy).fill(null).map(()=>new Array(xx).fill(null));
+  for (var y=0;y<yy;y++){
+   for (var x=0;x<xx;x++){
+    //console.log(y,x,grid[x][y].slice(0,1));
+    //if first digit 3/4 chg to 4/3
+    var t1=grid[x][y].slice(0,1);
+    var t2=grid[x][y].slice(1,2);
+    if (t1==3) {t1=4;}
+    else if (t1==4) {t1=3;}
+    if (t2==2) {t2=3;}
+    else if (t2==3) {t2=2;}
+    tgrd[y][x]=t1+t2+grid[x][y].slice(3,6)+grid[x][y].slice(2,3);
    }
    tgrd[y].reverse();
   }
@@ -661,10 +671,12 @@ function sav(msg='Click Ok to save this game.',sav=0){
 
 //cookies
 function sCook(cname, cvalue, exdays=999) {
+ if (cvalue.length>4096){ console.log('Cannot save huge levels in cookies!'); return; }
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  //console.log(cvalue.length);
 }
 function gCook(cname) {
   let name = cname + "=";

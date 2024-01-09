@@ -14,7 +14,7 @@ Drag pieces with a plus or line.
 Click pieces with a circle or curve.
 Need help? Take a look at the Tutorial Video: https://youtu.be/CwkhMN1WqD0
     ]]></description>
-    <version>1.8.0</version>
+    <version>1.8.2</version>
     <licence>agpl</licence>
     <author mail="colin@derben.ca" homepage="https://derben.ca">DerBen</author>
     <namespace>circlesdb</namespace>
@@ -23,7 +23,7 @@ Need help? Take a look at the Tutorial Video: https://youtu.be/CwkhMN1WqD0
     <bugs>https://github.com/derbenx/nextcloud-circlesdb/issues</bugs>
     <screenshot>https://raw.githubusercontent.com/derbenx/nextcloud-circlesdb/master/circlesdb.png</screenshot>
     <dependencies>
-        <nextcloud min-version="25" max-version="26"/>
+        <nextcloud min-version="25" max-version="29"/>
     </dependencies>
 	    <navigations>
         <navigation>
